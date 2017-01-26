@@ -51,7 +51,7 @@ void debugWebRequest(){
 }
 
 void getSerialBuffer(){
-  Serial.print("Got data: ");
+  Serial.print("Sent data: ");
   Serial.println(inputBuffer);
   server.send(200, "text/plain", inputBuffer);
   inputBuffer = "";
@@ -59,25 +59,26 @@ void getSerialBuffer(){
 
 void handleUnknownPost(){
   returnOK();
-  debugWebRequest();  
+  //debugWebRequest();  
   Serial.print("Unknown POST.");
 }
 
 void handleStringPost(){
   returnOK();
-  debugWebRequest();
-  Serial.print("String POST.");
+  //debugWebRequest();
+  Serial.print("Got data: ");
+  Serial.print(server.arg(0));
 }
 
 void handleDataPost(){
   returnOK();
-  debugWebRequest();
+  //debugWebRequest();
   Serial.print("Data POST.");
 }
 
 void handleNotFound(){
   returnOK();
-  debugWebRequest();
+  //debugWebRequest();
   Serial.print("Resource not found POST.");
 }
 

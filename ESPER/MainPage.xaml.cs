@@ -41,11 +41,11 @@ namespace ESPER
             //esperPostByteArray(serverUrl, testPacket);
             //esperPostString(serverUrl, "HEY YOU!");
             //esperGetData(serverUrl);
-            DoWorkPollingTask();
+            //DoWorkPollingTask();
 
         }
 
-        public async void esperGetData(string url)
+        public async Task<string> esperGetData(string url)
         {
             var cts = new CancellationTokenSource();
             cts.CancelAfter(TimeSpan.FromSeconds(30));
@@ -60,12 +60,14 @@ namespace ESPER
                 if(message != "") { Debug.WriteLine(message); }
                 response.Dispose();
                 cts.Dispose();
+                return message;
             }
             catch (TaskCanceledException ex)
             {
                 // Handle request being canceled due to timeout.
+                return "";
             }
-            
+            return "";
         }
 
         public async void esperPostByteArray(string url, byte[] data)
@@ -125,9 +127,16 @@ namespace ESPER
             });
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Get_Button_Click(object sender, RoutedEventArgs e)
         {
-            esperGetData("http://192.168.1.102/");
+            var data = await esperGetData("http://192.168.1.102/");
+            rxTextBox.Text += data;
+        }
+
+        private void Send_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string sendMessage = txTextBox.Text;
+            esperPostString("http://192.168.1.102/", sendMessage);
         }
     }
 }

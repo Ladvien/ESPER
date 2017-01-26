@@ -8,10 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="Get_Button_Click" >
+        <Button x:ConnectionId='1' HorizontalAlignment="Center" VerticalAlignment="Center"                          >
             Get Data
         </Button>
-        <Button HorizontalAlignment="Center" Margin="138,352,134,256" Click="Send_Button_Click" >
+        <Button x:ConnectionId='2' HorizontalAlignment="Center" Margin="138,352,134,256"                           >
             Send Data
         </Button>
         <Grid Margin="15,491,12,33">
@@ -20,9 +20,10 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Left" TextWrapping="Wrap" Width="163">
-                <Run x:Name="rxTextBox" Foreground="Crimson" Text="Received Data:"/>
+                <Run x:ConnectionId='4' x:Name="rxTextBox" Foreground="Crimson" Text="Received Data:"/>
             </TextBlock>
-            <TextBox Grid.Column="1" x:Name="txTextBox" HorizontalAlignment="Right" Width="160" Foreground="LimeGreen" Background="Black" Text="" AcceptsReturn="True" PlaceholderText="Type data to send" RequestedTheme="Dark"/>
+            <TextBox x:ConnectionId='3' Grid.Column="1" x:Name="txTextBox" HorizontalAlignment="Right" Width="160" Foreground="LimeGreen" Background="Black" Text="" AcceptsReturn="True" PlaceholderText="Type data to send" RequestedTheme="Dark"/>
         </Grid>
     </Grid>
 </Page>
+
