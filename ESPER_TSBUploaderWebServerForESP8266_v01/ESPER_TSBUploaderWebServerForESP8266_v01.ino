@@ -10,8 +10,7 @@
 const char* ssid = "Honeysuckle_Hardware";
 const char* password = "1532ePkF45a12//145e{k";
 
-//const char* ssid = "TCHC-Guest";
-//const char* password = "housingfirst";
+String deviceName = "ESPER_Tester";
 
 // Gross.  Global variables.  These are used for collecting Serial Data.
 String inputBuffer = "";         
@@ -48,6 +47,16 @@ void debugWebRequest(){
   }
   server.send(404, "text/plain", message);
   Serial.print(message);
+}
+
+
+void ping(){
+  server.send(200, "text/plain", "ping");
+}
+
+void getDeviceName(){
+  server.send(200, "text/plain", deviceName);
+  Serial.println("HEY YOU, got device name.");
 }
 
 void getSerialBuffer(){
@@ -131,6 +140,8 @@ void setup(void){
   server.on("/string", HTTP_POST, handleStringPost);
   server.on("/data", HTTP_POST, handleDataPost);
   server.on("/buffer", HTTP_POST, getSerialBuffer);
+  server.on("/name", HTTP_POST, getDeviceName);
+  server.on("/ping", HTTP_POST, ping);
   server.onNotFound(handleNotFound);
 
   server.begin();

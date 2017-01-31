@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>7A591CE14F7F3CC3777CC7D3BBEAC1718A842BA088D8A2633179C6A0B7DB34C7</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>4C7500D00A2B09D05961DBF4466B6922E90251DCEBD72EF847A3D7082B2593A7</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>e2e16d15-a8c6-42a2-b4a1-fcfb36a80723_1.0.0.0_x86__4w95bhx1cdg22</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>e2e16d15-a8c6-42a2-b4a1-fcfb36a80723_4w95bhx1cdg22!App</RegisteredUserModeAppID>
     <RegisteredPackageID>e2e16d15-a8c6-42a2-b4a1-fcfb36a80723</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-01-26T16:11:25.486</Modified>
+      <Modified>2017-01-31T15:12:40.322</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\ESPER.exe">
       <PackagePath>entrypoint\ESPER.exe</PackagePath>
-      <Modified>2017-01-26T16:11:24.941</Modified>
+      <Modified>2017-01-31T15:12:39.620</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -488,7 +488,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\ESPER.xr.xml">
       <PackagePath>ESPER.xr.xml</PackagePath>
-      <Modified>2017-01-26T16:11:24.820</Modified>
+      <Modified>2017-01-31T15:12:39.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-01-26T16:11:25.333</Modified>
+      <Modified>2017-01-31T15:12:40.119</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\Core\ESPER.exe">
       <PackagePath>ESPER.exe</PackagePath>
-      <Modified>2017-01-26T16:11:25.482</Modified>
+      <Modified>2017-01-31T15:12:40.318</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
