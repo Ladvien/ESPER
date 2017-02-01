@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <StackPanel x:Name="MainStack" Margin="0,20,0,0" Padding="2">
             <TextBlock x:Name="MainPageLabel" FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,20">Welecome to the ESPER Console</TextBlock>
-            <Line Stroke="Red" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
+            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.2*"/>
@@ -19,7 +19,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="GetDeviceInfo_Click">Get Device Info</Button>
             </Grid>
-            <Line Stroke="Red" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
+            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.4*"/>
@@ -43,30 +43,38 @@
                 <TextBox x:Name="ip3" Grid.Column="2"></TextBox>
                 <TextBox x:Name="ip4" Grid.Column="3"></TextBox>
             </Grid>
-            <Line Stroke="Red" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5"/>
+            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5"/>
         </StackPanel>
-        <Grid RelativePanel.Below="MainStack" HorizontalAlignment="Stretch">
+        <Grid x:Name="ReceivedTextGrid" RelativePanel.Below="MainStack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <ScrollViewer Grid.Row="0" >
-                <StackPanel>
-                   <TextBlock  x:Name="ReceivedTextBlock" Padding="10" Grid.Row="0"
-                    VerticalAlignment="Stretch" TextWrapping="Wrap">
-                            <Run ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="New Courier">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt vehicula nulla sed maximus. Sed vitae urna vitae libero dignissim convallis quis et erat. Suspendisse a nibh purus. Nam ut convallis ex, nec feugiat sapien. Sed commodo risus eget libero accumsan consectetur. Mauris sodales dapibus leo in bibendum. Aliquam eleifend metus in metus iaculis, id efficitur lorem posuere.Quisque nisl orci, malesuada et eros in, feugiat tincidunt neque. Phasellus venenatis rhoncus odio vel scelerisque. Vivamus facilisis, nunc non consequat consequat, felis justo maximus odio, eget dictum purus libero id lectus. Pellentesque tellus tortor, ullamcorper eu massa vitae, bibendum vehicula odio. Suspendisse a est at massa aliquam mollis. Nunc commodo nunc sit amet mi mollis efficitur. Nunc eget leo sit amet magna malesuada aliquet. Curabitur eget metus non leo laoreet hendrerit. Maecenas malesuada posuere risus. Praesent volutpat quis augue et porta. In mattis rhoncus tortor, eget ornare arcu lobortis eu. Vivamus ac mollis turpis. Proin cursus tincidunt ex, non feugiat leo facilisis et.Curabitur tellus dui, dignissim sit amet neque id, tristique egestas arcu. Ut in tellus urna. Cras ultrices sapien in odio maximus elementum. Quisque vitae erat eleifend, maximus ante id, vehicula turpis. Nam ut mi erat. Nunc urna massa, tincidunt non tincidunt eget, finibus sit amet ex. Morbi sed sapien facilisis, ornare eros a, fringilla eros. Vivamus eleifend venenatis volutpat. Nulla massa erat, auctor eget ullamcorper sodales, ultrices vel ipsum. Fusce accumsan sollicitudin molestie.Vestibulum ultricies maximus sapien eu efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer est orci, hendrerit at odio a, pulvinar congue lectus. Integer vel malesuada tellus. Proin non porta nulla. Curabitur at risus condimentum, vestibulum nibh quis, mattis ligula. Cras placerat dolor id purus feugiat, ac placerat libero congue. Aenean efficitur bibendum est, a aliquet purus aliquet sit amet. Morbi at elit ac erat pharetra faucibus quis ut erat. Donec quam turpis, vulputate quis urna vitae, efficitur suscipit orci. Nulla facilisi. Vivamus egestas ante at nibh vehicula, vitae luctus neque venenatis. Pellentesque nec dictum libero. Aenean commodo sapien sed luctus eleifend. Vivamus quis pulvinar ipsum. Donec eget felis cursus, venenatis lectus mollis, semper leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt vehicula nulla sed maximus. Sed vitae urna vitae libero dignissim convallis quis et erat. Suspendisse a nibh purus. Nam ut convallis ex, nec feugiat sapien. Sed commodo risus eget libero accumsan consectetur. Mauris sodales dapibus leo in bibendum. Aliquam eleifend metus in metus iaculis, id efficitur lorem posuere.Quisque nisl orci, malesuada et eros in, feugiat tincidunt neque. Phasellus venenatis rhoncus odio vel scelerisque. Vivamus facilisis, nunc non consequat consequat, felis justo maximus odio, eget dictum purus libero id lectus. Pellentesque tellus tortor, ullamcorper eu massa vitae, bibendum vehicula odio. Suspendisse a est at massa aliquam mollis. Nunc commodo nunc sit amet mi mollis efficitur. Nunc eget leo sit amet magna malesuada aliquet. Curabitur eget metus non leo laoreet hendrerit. Maecenas malesuada posuere risus. Praesent volutpat quis augue et porta. In mattis rhoncus tortor, eget ornare arcu lobortis eu. Vivamus ac mollis turpis. Proin cursus tincidunt ex, non feugiat leo facilisis et.Curabitur tellus dui, dignissim sit amet neque id, tristique egestas arcu. Ut in tellus urna. Cras ultrices sapien in odio maximus elementum. Quisque vitae erat eleifend, maximus ante id, vehicula turpis. Nam ut mi erat. Nunc urna massa, tincidunt non tincidunt eget, finibus sit amet ex. Morbi sed sapien facilisis, ornare eros a, fringilla eros. Vivamus eleifend venenatis volutpat. Nulla massa erat, auctor eget ullamcorper sodales, ultrices vel ipsum. Fusce accumsan sollicitudin molestie.Vestibulum ultricies maximus sapien eu efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer est orci, hendrerit at odio a, pulvinar congue lectus. Integer vel malesuada tellus. Proin non porta nulla. Curabitur at risus condimentum, vestibulum nibh quis, mattis ligula. Cras placerat dolor id purus feugiat, ac placerat libero congue. Aenean efficitur bibendum est, a aliquet purus aliquet sit amet. Morbi at elit ac erat pharetra faucibus quis ut erat. Donec quam turpis, vulputate quis urna vitae, efficitur suscipit orci. Nulla facilisi. Vivamus egestas ante at nibh vehicula, vitae luctus neque venenatis. Pellentesque nec dictum libero. Aenean commodo sapien sed luctus eleifend. Vivamus quis pulvinar ipsum. Donec eget felis cursus, venenatis lectus mollis, semper leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt vehicula nulla sed maximus. Sed vitae urna vitae libero dignissim convallis quis et erat. Suspendisse a nibh purus. Nam ut convallis ex, nec feugiat sapien. Sed commodo risus eget libero accumsan consectetur. Mauris sodales dapibus leo in bibendum. Aliquam eleifend metus in metus iaculis, id efficitur lorem posuere.Quisque nisl orci, malesuada et eros in, feugiat tincidunt neque. Phasellus venenatis rhoncus odio vel scelerisque. Vivamus facilisis, nunc non consequat consequat, felis justo maximus odio, eget dictum purus libero id lectus. Pellentesque tellus tortor, ullamcorper eu massa vitae, bibendum vehicula odio. Suspendisse a est at massa aliquam mollis. Nunc commodo nunc sit amet mi mollis efficitur. Nunc eget leo sit amet magna malesuada aliquet. Curabitur eget metus non leo laoreet hendrerit. Maecenas malesuada posuere risus. Praesent volutpat quis augue et porta. In mattis rhoncus tortor, eget ornare arcu lobortis eu. Vivamus ac mollis turpis. Proin cursus tincidunt ex, non feugiat leo facilisis et.Curabitur tellus dui, dignissim sit amet neque id, tristique egestas arcu. Ut in tellus urna. Cras ultrices sapien in odio maximus elementum. Quisque vitae erat eleifend, maximus ante id, vehicula turpis. Nam ut mi erat. Nunc urna massa, tincidunt non tincidunt eget, finibus sit amet ex. Morbi sed sapien facilisis, ornare eros a, fringilla eros. Vivamus eleifend venenatis volutpat. Nulla massa erat, auctor eget ullamcorper sodales, ultrices vel ipsum. Fusce accumsan sollicitudin molestie.Vestibulum ultricies maximus sapien eu efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer est orci, hendrerit at odio a, pulvinar congue lectus. Integer vel malesuada tellus. Proin non porta nulla. Curabitur at risus condimentum, vestibulum nibh quis, mattis ligula. Cras placerat dolor id purus feugiat, ac placerat libero congue. Aenean efficitur bibendum est, a aliquet purus aliquet sit amet. Morbi at elit ac erat pharetra faucibus quis ut erat. Donec quam turpis, vulputate quis urna vitae, efficitur suscipit orci. Nulla facilisi. Vivamus egestas ante at nibh vehicula, vitae luctus neque venenatis. Pellentesque nec dictum libero. Aenean commodo sapien sed luctus eleifend. Vivamus quis pulvinar ipsum. Donec eget felis cursus, venenatis lectus mollis, semper leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt vehicula nulla sed maximus. Sed vitae urna vitae libero dignissim convallis quis et erat. Suspendisse a nibh purus. Nam ut convallis ex, nec feugiat sapien. Sed commodo risus eget libero accumsan consectetur. Mauris sodales dapibus leo in bibendum. Aliquam eleifend metus in metus iaculis, id efficitur lorem posuere.Quisque nisl orci, malesuada et eros in, feugiat tincidunt neque. Phasellus venenatis rhoncus odio vel scelerisque. Vivamus facilisis, nunc non consequat consequat, felis justo maximus odio, eget dictum purus libero id lectus. Pellentesque tellus tortor, ullamcorper eu massa vitae, bibendum vehicula odio. Suspendisse a est at massa aliquam mollis. Nunc commodo nunc sit amet mi mollis efficitur. Nunc eget leo sit amet magna malesuada aliquet. Curabitur eget metus non leo laoreet hendrerit. Maecenas malesuada posuere risus. Praesent volutpat quis augue et porta. In mattis rhoncus tortor, eget ornare arcu lobortis eu. Vivamus ac mollis turpis. Proin cursus tincidunt ex, non feugiat leo facilisis et.Curabitur tellus dui, dignissim sit amet neque id, tristique egestas arcu. Ut in tellus urna. Cras ultrices sapien in odio maximus elementum. Quisque vitae erat eleifend, maximus ante id, vehicula turpis. Nam ut mi erat. Nunc urna massa, tincidunt non tincidunt eget, finibus sit amet ex. Morbi sed sapien facilisis, ornare eros a, fringilla eros. Vivamus eleifend venenatis volutpat. Nulla massa erat, auctor eget ullamcorper sodales, ultrices vel ipsum. Fusce accumsan sollicitudin molestie.Vestibulum ultricies maximus sapien eu efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer est orci, hendrerit at odio a, pulvinar congue lectus. Integer vel malesuada tellus. Proin non porta nulla. Curabitur at risus condimentum, vestibulum nibh quis, mattis ligula. Cras placerat dolor id purus feugiat, ac placerat libero congue. Aenean efficitur bibendum est, a aliquet purus aliquet sit amet. Morbi at elit ac erat pharetra faucibus quis ut erat. Donec quam turpis, vulputate quis urna vitae, efficitur suscipit orci. Nulla facilisi. Vivamus egestas ante at nibh vehicula, vitae luctus neque venenatis. Pellentesque nec dictum libero. Aenean commodo sapien sed luctus eleifend. Vivamus quis pulvinar ipsum. Donec eget felis cursus, venenatis lectus mollis, semper leo.</Run>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Row="0" HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock  x:Name="ReceivedTextBlock" Padding="12" Grid.Row="0"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    FontFamily="New Courier">
+                            <Run>The run</Run>
                     </TextBlock>
                 </StackPanel>
             </ScrollViewer>
-            <Grid Grid.Row="1">
+        </Grid>
+        <StackPanel RelativePanel.Below="ReceivedTextGrid">
+            <Grid   Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Content="Send" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBox>
+                <Button Grid.Row="0"  Content="Send" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+                    <TextBox Padding="12" MinWidth="360" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBox>
+                </ScrollViewer>
             </Grid>
-        </Grid>
-
+        </StackPanel>
     </RelativePanel>
 </Page>
