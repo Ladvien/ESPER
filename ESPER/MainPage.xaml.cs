@@ -37,19 +37,14 @@ namespace ESPER
 
             var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
 
-            /*
-            // Width
-            ReceivedTextBoxScrollPresenter.Width = bounds.Width - 2;
-            ReceivedTextBox.Width = bounds.Width - 2;
-
-
             // Height
             //ReceivedTextBoxScrollPresenter.Height = ReceivedTextBoxScrollPresenter.
-            var texBoxHeight = bounds.Height - MainStack.Height - SendButton.Height;
-            ReceivedTextBox.Height = texBoxHeight;
-            ReceivedTextBoxScrollPresenter.Height = texBoxHeight;
-            */
-
+            //UpdateLayout();
+            //var textBoxHeight = bounds.Height - MainStack.Height;
+            //ReceivedTextBlock.Height = textBoxHeight;
+           // ReceivedScrollView.MaxHeight = textBoxHeight;
+            
+            
             //esper.PostString("Hey you!");
             //esper.SetPollingDelay(2000);
             //esper.GetDeviceName();
