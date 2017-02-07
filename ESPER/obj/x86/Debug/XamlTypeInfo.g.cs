@@ -132,15 +132,19 @@ namespace ESPER.ESPER_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "ESPER.MainPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[5];
+            _typeNameTable[0] = "ESPER.TabHeader";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[2] = "String";
+            _typeNameTable[3] = "ESPER.MainPage";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::ESPER.MainPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[5];
+            _typeTable[0] = typeof(global::ESPER.TabHeader);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[2] = typeof(global::System.String);
+            _typeTable[3] = typeof(global::ESPER.MainPage);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -175,7 +179,8 @@ namespace ESPER.ESPER_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::ESPER.MainPage(); }
+        private object Activate_0_TabHeader() { return new global::ESPER.TabHeader(); }
+        private object Activate_3_MainPage() { return new global::ESPER.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -187,18 +192,31 @@ namespace ESPER.ESPER_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  ESPER.MainPage
-                userType = new global::ESPER.ESPER_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+            case 0:   //  ESPER.TabHeader
+                userType = new global::ESPER.ESPER_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_0_TabHeader;
+                userType.AddMemberName("Glyph");
+                userType.AddMemberName("Label");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::ESPER.ESPER_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  String
+                xamlType = new global::ESPER.ESPER_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  ESPER.MainPage
+                userType = new global::ESPER.ESPER_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::ESPER.ESPER_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -206,11 +224,49 @@ namespace ESPER.ESPER_XamlTypeInfo
         }
 
 
+        private object get_0_TabHeader_Glyph(object instance)
+        {
+            var that = (global::ESPER.TabHeader)instance;
+            return that.Glyph;
+        }
+        private void set_0_TabHeader_Glyph(object instance, object Value)
+        {
+            var that = (global::ESPER.TabHeader)instance;
+            that.Glyph = (global::System.String)Value;
+        }
+        private object get_1_TabHeader_Label(object instance)
+        {
+            var that = (global::ESPER.TabHeader)instance;
+            return that.Label;
+        }
+        private void set_1_TabHeader_Label(object instance, object Value)
+        {
+            var that = (global::ESPER.TabHeader)instance;
+            that.Label = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::ESPER.ESPER_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::ESPER.ESPER_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "ESPER.TabHeader.Glyph":
+                userType = (global::ESPER.ESPER_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ESPER.TabHeader");
+                xamlMember = new global::ESPER.ESPER_XamlTypeInfo.XamlMember(this, "Glyph", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_TabHeader_Glyph;
+                xamlMember.Setter = set_0_TabHeader_Glyph;
+                break;
+            case "ESPER.TabHeader.Label":
+                userType = (global::ESPER.ESPER_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ESPER.TabHeader");
+                xamlMember = new global::ESPER.ESPER_XamlTypeInfo.XamlMember(this, "Label", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_TabHeader_Label;
+                xamlMember.Setter = set_1_TabHeader_Label;
+                break;
+            }
             return xamlMember;
         }
     }

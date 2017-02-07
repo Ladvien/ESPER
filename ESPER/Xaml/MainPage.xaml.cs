@@ -29,7 +29,7 @@ namespace ESPER
     public sealed partial class MainPage : Page
     {
         const string serverUrl = "http://192.168.1.103/";
-        Esper esper = new Esper(serverUrl);
+       // Esper esper = new Esper(serverUrl);
 
         public MainPage()
         {
@@ -62,13 +62,18 @@ namespace ESPER
         {
             //string sendMessage = txTextBox.Text;
             ///esperPostString(serverUrl, sendMessage);
-            esper.End();
+            //esper.End();
         }
 
-        private async void GetDeviceInfo_Click(object sender, RoutedEventArgs e)
+        private async void Search_Click(object sender, RoutedEventArgs e)
         {
-            var deviceName = await esper.GetDeviceName();
-            DeviceNameLabel.Text = deviceName ?? "";
+            Esper esper = new Esper(ProgressBar);
+            var discoveredIPs = await esper.SearchForESPER(98, 110);
+            
+            foreach(Uri ip in discoveredIPs) {
+                IPComboBox.Items.Add(ip.Host);
+            }
+            IPComboBox.SelectedIndex = 0;
         }
     }
 }

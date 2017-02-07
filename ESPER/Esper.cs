@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml.Controls;
 using Windows.Web.Http;
 
 namespace ESPER
@@ -22,9 +23,42 @@ namespace ESPER
         private int PollingDelay { get; set; } = defaultPollingDelay;
         private bool PollingActive { get; set; } = false;
 
-        public Esper(string consumerUrl)
+        ProgressBar EsperProgressBar = new ProgressBar();
+
+        public Esper(ProgressBar _pb)
         {
-            WebServerUrl = consumerUrl;
+            // https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls
+            EsperProgressBar = _pb;
+        }
+
+        public async Task<List<Uri>> SearchForESPER(int startingSub, int endingSub)
+        {
+            var httpClient = new System.Net.Http.HttpClient();
+            httpClient.Timeout = new TimeSpan(0, 0, 0, 0, 300);
+            var webService = WebServerUrl + "name";
+            List<Uri> discoveredIPs = new List<Uri>();
+            EsperProgressBar.Maximum = endingSub - startingSub;
+
+            for (int i = startingSub; i < endingSub; i++)
+            {
+                try
+                {
+                    string ip = "http://192.168.1." + i.ToString() + "/";
+                    var resourceUri = new Uri(ip);
+                    var response = await httpClient.PostAsync(resourceUri, null);
+                    if(response.IsSuccessStatusCode == true)
+                    {
+                        discoveredIPs.Add(resourceUri);
+                    }
+                    response.Dispose();
+                }
+                catch (Exception ex)
+                {
+
+                }
+                EsperProgressBar.Value += 1;
+            }
+            return discoveredIPs;
         }
 
         public async void PostByteArray(byte[] data)

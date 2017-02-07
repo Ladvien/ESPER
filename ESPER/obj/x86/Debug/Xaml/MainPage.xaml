@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="ESPER.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ESPER"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" FontSize="44">Lumi2</TextBlock>
+        <ProgressBar x:ConnectionId='1' x:Name="ProgressBar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Pivot>
+            <Pivot.Items>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <local:TabHeader Label="Devices" Glyph="&#xE772;"/>
+                    </PivotItem.Header>
+                    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <StackPanel Margin="0,20,0,0" Padding="2">
+                            <Pivot>
+                                <Pivot.Items>
+                                    <PivotItem>
+                                        <PivotItem.Header>
+                                            <local:TabHeader Label="WiFi" Glyph="&#xE702;"/>
+                                        </PivotItem.Header>
+                                        <StackPanel>
+                                            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1.4*"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="Device Name:" Padding="2"/>
+                                                <TextBlock x:ConnectionId='6' x:Name="DeviceNameLabel" Grid.Column="1" Padding="2" Text=""/>
+
+                                            </Grid>
+                                            <TextBlock Padding="5">IP Address:</TextBlock>
+                                            <Grid VerticalAlignment="Top" Margin="0,0,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ComboBox x:ConnectionId='5' x:Name="IPComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                            </Grid>
+                                            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:ConnectionId='4' x:Name="Search"  Padding="2"                       >
+                                                    <StackPanel>
+                                                        <TextBlock Text="&#xE721;" VerticalAlignment="Stretch" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" AutomationProperties.Name="Favorite" />
+                                                        <TextBlock Text="Search"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <Button Padding="2">
+                                                    <StackPanel>
+                                                        <TextBlock Text="&#59163;" VerticalAlignment="Stretch" HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" AutomationProperties.Name="Favorite" />
+                                                        <TextBlock Text="Connect"/>
+                                                    </StackPanel>
+                                                </Button>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </PivotItem>
+                                    <PivotItem>
+                                        <PivotItem.Header>
+                                            <local:TabHeader Label="Bluetooth LE" Glyph="&#xE702;"/>
+                                        </PivotItem.Header>
+                                        <StackPanel>
+                                            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5" ></Line>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1.4*"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="Device Name:" Padding="2"/>
+                                                <TextBlock Grid.Column="1" Padding="2" Text=""/>
+
+                                            </Grid>
+                                            <TextBlock Padding="5">IP Address:</TextBlock>
+                                            <Grid VerticalAlignment="Top" Margin="0,0,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                            </Grid>
+                                            <Line Stroke="{ThemeResource ApplicationForegroundThemeBrush}" X1="0" X2="1" Stretch="Fill" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="0,5,0,5"/>
+                                        </StackPanel>
+                                    </PivotItem>
+                                </Pivot.Items>
+                            </Pivot>
+                        </StackPanel>
+                    </RelativePanel>
+                </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <local:TabHeader Label="RX / TX" Glyph="&#xE13C;"/>
+                    </PivotItem.Header>
+                    <StackPanel>
+                        <Grid x:ConnectionId='2' x:Name="ReceivedTextGrid" RelativePanel.Below="MainStack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Grid.Row="0" HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <StackPanel HorizontalAlignment="Stretch">
+                                    <TextBlock x:ConnectionId='3'  x:Name="ReceivedTextBlock" Padding="12" Grid.Row="0"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    FontFamily="New Courier">
+                            <Run>The run</Run>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                        <StackPanel RelativePanel.Below="ReceivedTextGrid">
+                            <Grid   Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Row="0"  Content="Send" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto">
+                                    <TextBox Padding="12" MinWidth="360" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBox>
+                                </ScrollViewer>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem>
+                    <PivotItem.Header>
+                        <local:TabHeader Label="TinySafeBoot"  Glyph="&#xE159;"/>
+                    </PivotItem.Header>
+                    
+                </PivotItem>
+            </Pivot.Items>
+        </Pivot>
+    </StackPanel>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Label="RX" IsHitTestVisible="False">
+                    <Rectangle x:ConnectionId='8'  x:Name="rxIndicator" RadiusX="10" RadiusY="10" Width="20" Height="20" Fill="Red"></Rectangle>
+                </AppBarButton>
+                <AppBarButton Label="TX" IsHitTestVisible="False">
+                    <Rectangle x:ConnectionId='7' RadiusX="10" RadiusY="10" x:Name="txIndicator" Width="20" Height="20" Fill="Red"></Rectangle>
+                </AppBarButton>
+                <AppBarSeparator/>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+</Page>
+
