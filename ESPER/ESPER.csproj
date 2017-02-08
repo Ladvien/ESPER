@@ -95,10 +95,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LumiState\LumiDeviceState.cs" />
+    <Compile Include="LumiCentralManagement\ILumiCentral.cs" />
+    <Compile Include="LumiCentralManagement\LumiBluetoothCentral.cs" />
+    <Compile Include="LumiCentralManagement\LumiCentral.cs" />
+    <Compile Include="LumiCentralManagement\LumiHttpCentral.cs" />
+    <Compile Include="LumiPeripheralManagement\LumiBluetoothPeripheral.cs" />
+    <Compile Include="LumiPeripheralManagement\ILumiPeripheral.cs" />
+    <Compile Include="LumiPeripheralManagement\LumiPeripheral.cs" />
     <Compile Include="Xaml\TabHeader.xaml.cs">
       <DependentUpon>TabHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Esper.cs" />
+    <Compile Include="LumiPeripheralManagement\LumiHttpPeripheral.cs" />
     <Compile Include="Xaml\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -135,6 +143,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

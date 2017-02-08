@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESPER.LumiPeripheralManagement;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -20,6 +21,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 
+
 namespace ESPER
 {
                 
@@ -29,7 +31,7 @@ namespace ESPER
     public sealed partial class MainPage : Page
     {
         const string serverUrl = "http://192.168.1.103/";
-       // Esper esper = new Esper(serverUrl);
+       // LumiHttpPeripheral esper = new LumiHttpPeripheral(serverUrl);
 
         public MainPage()
         {
@@ -67,8 +69,8 @@ namespace ESPER
 
         private async void Search_Click(object sender, RoutedEventArgs e)
         {
-            Esper esper = new Esper(ProgressBar);
-            var discoveredIPs = await esper.SearchForESPER(98, 110);
+            LumiHttpPeripheral esper = new LumiHttpPeripheral(ProgressBar);
+            var discoveredIPs = await esper.SearchForESPER(98, 130);
             
             foreach(Uri ip in discoveredIPs) {
                 IPComboBox.Items.Add(ip.Host);

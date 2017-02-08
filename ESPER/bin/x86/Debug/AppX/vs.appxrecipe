@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-07T14:40:36.580</Modified>
+      <Modified>2017-02-07T14:44:56.678</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\ESPER.exe">
       <PackagePath>entrypoint\ESPER.exe</PackagePath>
-      <Modified>2017-02-07T14:40:36.353</Modified>
+      <Modified>2017-02-07T14:44:56.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -501,7 +501,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thomas Brittain\documents\visual studio 2015\Projects\ESPER\ESPER\bin\x86\Debug\Core\ESPER.exe">
       <PackagePath>ESPER.exe</PackagePath>
-      <Modified>2017-02-07T14:40:36.574</Modified>
+      <Modified>2017-02-07T14:44:56.673</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

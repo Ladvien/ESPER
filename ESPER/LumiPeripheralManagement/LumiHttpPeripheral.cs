@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESPER.LumiPeripheralManagement;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,9 +11,9 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls;
 using Windows.Web.Http;
 
-namespace ESPER
+namespace ESPER.LumiPeripheralManagement
 {
-    class Esper
+    class LumiHttpPeripheral: LumiPeripheral, ILumiPeripheral
     {
         const int defaultPollingDelay = 50; 
 
@@ -25,7 +26,7 @@ namespace ESPER
 
         ProgressBar EsperProgressBar = new ProgressBar();
 
-        public Esper(ProgressBar _pb)
+        public LumiHttpPeripheral(ProgressBar _pb)
         {
             // https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls
             EsperProgressBar = _pb;
@@ -58,6 +59,8 @@ namespace ESPER
                 }
                 EsperProgressBar.Value += 1;
             }
+            EsperProgressBar.Value = 0;
+            EsperProgressBar.IsEnabled = false;
             return discoveredIPs;
         }
 
