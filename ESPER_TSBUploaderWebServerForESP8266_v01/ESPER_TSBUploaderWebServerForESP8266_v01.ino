@@ -8,7 +8,7 @@
 */
 
 const char* ssid = "Honeysuckle_Hardware";
-const char* password = "1532ePkF45a12//145e{k";
+const char* password = "";
 
 String deviceName = "ESPER_Tester";
 
